@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Phase Power Consumption Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://www.openaccessgovernment.org/wp-content/uploads/2023/06/iStock-1399745217-1536x864.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .power-widget {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            width: 400px;
+            transition: transform 0.3s;
+        }
+
+        .power-widget:hover {
+            transform: scale(1.05);
+        }
+
+        .power-icon {
+            width: 80px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .headline {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1abc9c; /* Headline color */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .prediction {
+            font-size: 48px;
+            margin: 10px 0;
+            color: #1abc9c; /* Vibrant color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .status {
+            font-size: 20px;
+            margin: 5px 0;
+            color: #ecf0f1; /* Light color */
+        }
+
+        .power-details {
+            display: flex;
+            justify-content: space-around;
+            font-size: 14px;
+            margin-top: 10px;
+            color: #ffcc00; /* Bright color */
+        }
+
+        .voltage-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .voltage {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+            flex: 1;
+            margin: 0 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="power-widget">
+        <div class="headline">Power Consumption Prediction</div>
+        <img src="https://i.pinimg.com/originals/06/fe/37/06fe3743c779c38676165198987b3183.gif" alt="Power Icon" class="power-icon">
+        <div class="prediction">Total: 1500 kWh</div>
+        <div class="status">Predicted Consumption</div>
+        <div class="power-details">
+            <span>💡 75% Usage</span>
+            <span class="usage">📈 10% Increase</span>
+        </div>
+        <div class="voltage-details">
+            <div class="voltage">
+                <strong>Phase A:</strong><br>
+                <span id="phaseA">230 V</span>
+            </div>
+            <div class="voltage">
+                <strong>Phase B:</strong><br>
+                <span id="phaseB">240 V</span>
+            </div>
+            <div class="voltage">
+                <strong>Phase C:</strong><br>
+                <span id="phaseC">235 V</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Example function to update voltage values (replace with actual data fetching)
+        function updateVoltages(phaseA, phaseB, phaseC) {
+            document.getElementById('phaseA').innerText = phaseA + ' V';
+            document.getElementById('phaseB').innerText = phaseB + ' V';
+            document.getElementById('phaseC').innerText = phaseC + ' V';
+        }
+
+        // Simulated data update
+        setTimeout(() => {
+            updateVoltages(230, 240, 235); // Example values
+        }, 2000);
+    </script>
+</body>
+</html>
